@@ -1,0 +1,29 @@
+[
+{
+  "model": "webapp.article",
+  "pk": 1,
+  "fields": {
+    "title": "Сдать домашку",
+    "status": "in_progress",
+    "deadline": "2025-06-27"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 2,
+  "fields": {
+    "title": "Пробежать 4 км",
+    "status": "new",
+    "deadline": "2025-06-28"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 3,
+  "fields": {
+    "title": "Выпить лекарство",
+    "status": "done",
+    "deadline": "2025-06-26"
+  }
+}
+]
