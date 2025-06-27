@@ -5,6 +5,7 @@ status_choices = [('new', 'Новая'), ('in_progress', 'В процессе'),
 
 class Article(models.Model):
     title = models.CharField(max_length=75, verbose_name='Описание')
+    content = models.TextField(verbose_name='Контент', null=True, blank=True)
     status = models.CharField(max_length=20, choices=status_choices, default='new', verbose_name='Выборка')
     deadline = models.DateField(verbose_name='Дата выполнения', null=True, blank=True)
 

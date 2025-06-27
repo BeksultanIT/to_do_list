@@ -1,29 +1,33 @@
+Tracking file by folder pattern:  migrations
 [
 {
   "model": "webapp.article",
   "pk": 1,
   "fields": {
-    "title": "Сдать домашку",
-    "status": "in_progress",
-    "deadline": "2025-06-27"
-  }
-},
-{
-  "model": "webapp.article",
-  "pk": 2,
-  "fields": {
-    "title": "Пробежать 4 км",
+    "title": "Пробежка",
+    "content": "По полю 3 км",
     "status": "new",
     "deadline": "2025-06-28"
   }
 },
 {
   "model": "webapp.article",
+  "pk": 2,
+  "fields": {
+    "title": "Лексрство",
+    "content": "Выпить лекарство ",
+    "status": "new",
+    "deadline": "2025-06-27"
+  }
+},
+{
+  "model": "webapp.article",
   "pk": 3,
   "fields": {
-    "title": "Выпить лекарство",
-    "status": "done",
-    "deadline": "2025-06-26"
+    "title": "Домашка",
+    "content": "Сделать домашку на отлично",
+    "status": "in_progress",
+    "deadline": "2025-06-27"
   }
 }
 ]

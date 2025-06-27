@@ -14,7 +14,8 @@ def new(request):
         title = request.POST.get('title')
         status = request.POST.get('status')
         deadline = request.POST.get('deadline')
-        Article.objects.create(title=title, status=status, deadline=deadline)
+        content = request.POST.get('content')
+        Article.objects.create(title=title, status=status, deadline=deadline, content=content)
         return HttpResponseRedirect("/")
     else:
         return render(request, 'new.html', {'status_choices': status_choices})
