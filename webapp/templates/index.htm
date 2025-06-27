@@ -16,7 +16,7 @@
 <div class="articles">
     {% for article in articles %}
     <div class="article">
-        <h1>{{article.title}}</h1>
+        <a href="article/{{ article.id }}"><h1>{{article.title}}</h1></a>
         <p>{{article.content}}</p>
         <p>{{article.status}}</p>
         <p>{{article.deadline}}</p>
