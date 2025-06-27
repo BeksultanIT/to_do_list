@@ -18,9 +18,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
+          {% block nav %}
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'new' %}">Add new task</a>
         </li>
+          {% endblock %}
       </ul>
     </div>
   </div>
