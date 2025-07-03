@@ -6,8 +6,8 @@
 
 
 <form action="/new/" method="post">
-    {% include 'partial/task_form.html' %}
-    <input type="submit" value="Send"/>
+    {% include 'partial/task_form.html' with button_text='Create' %}
+
 </form>
 
 {% endblock %}
