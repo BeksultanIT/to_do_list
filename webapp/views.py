@@ -31,6 +31,13 @@ def update_task(request, *args,pk, **kwargs ):
     else:
         return render(request, 'update_task.html', {'task': task,  'status_choices':status_choices}, )
 
+def delete_task(request, *args,pk, **kwargs ):
+    task = get_object_or_404(Task, pk=pk)
+    if request.method == 'POST':
+        task.delete()
+        return redirect('index')
+    else:
+        return render(request, 'delete_task.html', {'task': task,  'status_choices':status_choices}, )
 
 def detail_article(request,*args,pk, **kwargs):
     task = get_object_or_404(Task, pk=pk)
