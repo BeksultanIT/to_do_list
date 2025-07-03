@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 status_choices = [('new', 'Новая'), ('in_progress', 'В процессе'),  ('done', 'Сделано')]
 
-class Article(models.Model):
+class Task(models.Model):
     title = models.CharField(max_length=75, verbose_name='Описание')
     content = models.TextField(verbose_name='Контент', null=True, blank=True)
     status = models.CharField(max_length=20, choices=status_choices, default='new', verbose_name='Выборка')

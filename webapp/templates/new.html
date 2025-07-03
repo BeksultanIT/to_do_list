@@ -6,18 +6,7 @@
 
 
 <form action="/new/" method="post">
-    {% csrf_token %}
-    <input type="text" name="title"/><br/><br>
-
-    <textarea name="content" cols=20" rows="5"></textarea><br>
-    <select name="status" >
-        {% for status in status_choices %}
-            <option value="{{status.0}}">{{status.1 }}</option>
-        {% endfor %}
-    </select><br><br>
-
-    <input type="date" name="deadline"/><br/>
-    <br/>
+    {% include 'partial/task_form.html' %}
     <input type="submit" value="Send"/>
 </form>
 
