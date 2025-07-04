@@ -1,6 +1,6 @@
 [
 {
-  "model": "webapp.article",
+  "model": "webapp.task",
   "pk": 1,
   "fields": {
     "title": "Пробежка",
@@ -10,7 +10,7 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.task",
   "pk": 2,
   "fields": {
     "title": "Лексрство",
@@ -20,13 +20,83 @@
   }
 },
 {
-  "model": "webapp.article",
+  "model": "webapp.task",
   "pk": 3,
   "fields": {
     "title": "Домашка",
     "content": "Сделать домашку на отлично",
     "status": "in_progress",
     "deadline": "2025-06-27"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 20,
+  "fields": {
+    "title": "Встреча",
+    "content": "сходить на встречу с друзьями",
+    "status": "in_progress",
+    "deadline": "2025-07-06"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 21,
+  "fields": {
+    "title": "Встретить друга",
+    "content": "Поехать в Аэропорт и встретить друга",
+    "status": "new",
+    "deadline": "2025-07-10"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 22,
+  "fields": {
+    "title": "Контрольная работа",
+    "content": "Django",
+    "status": "in_progress",
+    "deadline": "2025-07-05"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 23,
+  "fields": {
+    "title": "Купить телефон",
+    "content": "Iphone 16 pro max",
+    "status": "done",
+    "deadline": "2025-07-01"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 24,
+  "fields": {
+    "title": "Уборка",
+    "content": "Сделать уборку в комнате",
+    "status": "in_progress",
+    "deadline": "2025-07-04"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 25,
+  "fields": {
+    "title": "помыть Машину",
+    "content": "Очистить ее снаружи и изнутри",
+    "status": "new",
+    "deadline": "2025-07-06"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 26,
+  "fields": {
+    "title": "Иссык-Куль",
+    "content": "Сьездить на отдых",
+    "status": "new",
+    "deadline": "2025-07-07"
   }
 }
 ]
