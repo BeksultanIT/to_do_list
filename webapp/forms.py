@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import widgets, DateInput
 
-from webapp.models import status_choices
+from webapp.models import status_choices, Task
 
 
 class TaskForm(forms.Form):
@@ -9,3 +9,10 @@ class TaskForm(forms.Form):
     content = forms.CharField( required=True, label='Content', widget=forms.Textarea(attrs={'class': 'form-control'}))
     status = forms.ChoiceField(choices=status_choices, widget=widgets.Select(attrs={'class': 'form-control'}))
     deadline = forms.DateField(required=True, label='Deadline',  widget=forms.DateInput(attrs={'type': 'date'}))
+
+class BulkDeleteForm(forms.Form):
+    selected_tasks = forms.ModelMultipleChoiceField(
+        queryset=Task.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        required=False
+    )

@@ -1,13 +1,21 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
-from webapp.forms import TaskForm
+from webapp.forms import TaskForm, BulkDeleteForm
 from webapp.models import Task, status_choices
 
 
-# Create your views here.
+
 def index(request):
+    if request.method == 'POST':
+        task_ids = request.POST.getlist('selected_tasks')
+        if task_ids:
+            Task.objects.filter(id__in=task_ids).delete()
+        return redirect('index')
+
     tasks = Task.objects.order_by('-id')
-    return render(request, 'index.htm', {'tasks': tasks})
+    bulk_form = BulkDeleteForm()
+    return render(request, 'index.html', {'tasks': tasks, 'bulk_form': bulk_form})
+
 
 def new(request):
     if request.method == 'POST':
