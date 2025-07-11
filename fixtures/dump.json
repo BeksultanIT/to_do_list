@@ -3,90 +3,197 @@
   "model": "webapp.task",
   "pk": 1,
   "fields": {
+    "created_at": "2025-07-11T09:40:54.857Z",
+    "updated_at": "2025-07-11T09:37:08.208Z",
     "title": "Пробежка",
     "content": "По полю 3 км",
-    "deadline": "2025-06-28"
+    "deadline": "2025-06-28",
+    "status": 2,
+    "type": 2
   }
 },
 {
   "model": "webapp.task",
   "pk": 2,
   "fields": {
+    "created_at": "2025-07-11T09:40:54.857Z",
+    "updated_at": "2025-07-11T09:37:32.238Z",
     "title": "Лексрство",
-    "content": "Выпить лекарство ",
-    "deadline": "2025-06-27"
+    "content": "Выпить лекарство",
+    "deadline": "2025-06-27",
+    "status": 2,
+    "type": 2
   }
 },
 {
   "model": "webapp.task",
   "pk": 3,
   "fields": {
+    "created_at": "2025-07-11T09:40:54.857Z",
+    "updated_at": "2025-07-11T09:37:21.686Z",
     "title": "Домашка",
     "content": "Сделать домашку на отлично",
-    "deadline": "2025-06-27"
+    "deadline": "2025-06-27",
+    "status": 3,
+    "type": 3
   }
 },
 {
   "model": "webapp.task",
   "pk": 20,
   "fields": {
+    "created_at": "2025-07-11T09:40:54.857Z",
+    "updated_at": "2025-07-11T09:37:43.837Z",
     "title": "Встреча",
     "content": "сходить на встречу с друзьями",
-    "deadline": "2025-07-06"
+    "deadline": "2025-07-06",
+    "status": 1,
+    "type": 1
   }
 },
 {
   "model": "webapp.task",
   "pk": 21,
   "fields": {
+    "created_at": "2025-07-11T09:40:54.857Z",
+    "updated_at": "2025-07-11T09:38:07.220Z",
     "title": "Встретить друга",
     "content": "Поехать в Аэропорт и встретить друга",
-    "deadline": "2025-07-10"
+    "deadline": "2025-07-10",
+    "status": 1,
+    "type": 2
   }
 },
 {
   "model": "webapp.task",
   "pk": 22,
   "fields": {
+    "created_at": "2025-07-11T09:40:54.857Z",
+    "updated_at": "2025-07-11T09:38:50.724Z",
     "title": "Контрольная работа",
     "content": "Django",
-    "deadline": "2025-07-05"
+    "deadline": "2025-07-05",
+    "status": 1,
+    "type": 3
   }
 },
 {
   "model": "webapp.task",
   "pk": 23,
   "fields": {
+    "created_at": "2025-07-11T09:40:54.857Z",
+    "updated_at": "2025-07-11T09:39:12.415Z",
     "title": "Купить телефон",
     "content": "Iphone 16 pro max",
-    "deadline": "2025-07-01"
+    "deadline": "2025-07-01",
+    "status": 3,
+    "type": 3
   }
 },
 {
   "model": "webapp.task",
   "pk": 24,
   "fields": {
+    "created_at": "2025-07-11T09:40:54.857Z",
+    "updated_at": "2025-07-11T09:39:21.777Z",
     "title": "Уборка",
     "content": "Сделать уборку в комнате",
-    "deadline": "2025-07-04"
+    "deadline": "2025-07-04",
+    "status": 2,
+    "type": 2
   }
 },
 {
   "model": "webapp.task",
   "pk": 25,
   "fields": {
+    "created_at": "2025-07-11T09:40:54.857Z",
+    "updated_at": "2025-07-11T09:39:33.836Z",
     "title": "помыть Машину",
     "content": "Очистить ее снаружи и изнутри",
-    "deadline": "2025-07-06"
+    "deadline": "2025-07-06",
+    "status": 3,
+    "type": 1
   }
 },
 {
   "model": "webapp.task",
   "pk": 26,
   "fields": {
+    "created_at": "2025-07-11T09:40:54.857Z",
+    "updated_at": "2025-07-11T09:40:02.506Z",
     "title": "Иссык-Куль",
     "content": "Сьездить на отдых",
-    "deadline": "2025-07-07"
+    "deadline": "2025-07-07",
+    "status": 3,
+    "type": 1
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 27,
+  "fields": {
+    "created_at": "2025-07-11T09:40:54.857Z",
+    "updated_at": "2025-07-11T09:40:54.857Z",
+    "title": "Написать контрольную",
+    "content": "На хороший балл",
+    "deadline": "2025-07-04",
+    "status": 3,
+    "type": 1
+  }
+},
+{
+  "model": "webapp.statuses",
+  "pk": 1,
+  "fields": {
+    "created_at": "2025-07-11T09:32:48.405Z",
+    "updated_at": "2025-07-11T09:32:48.405Z",
+    "title": "New"
+  }
+},
+{
+  "model": "webapp.statuses",
+  "pk": 2,
+  "fields": {
+    "created_at": "2025-07-11T09:33:05.723Z",
+    "updated_at": "2025-07-11T09:33:05.723Z",
+    "title": "In Progress"
+  }
+},
+{
+  "model": "webapp.statuses",
+  "pk": 3,
+  "fields": {
+    "created_at": "2025-07-11T09:33:16.728Z",
+    "updated_at": "2025-07-11T09:33:16.728Z",
+    "title": "Done"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 1,
+  "fields": {
+    "created_at": "2025-07-11T09:33:31.709Z",
+    "updated_at": "2025-07-11T09:33:31.709Z",
+    "title": "Task"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 2,
+  "fields": {
+    "created_at": "2025-07-11T09:33:36.116Z",
+    "updated_at": "2025-07-11T09:33:36.116Z",
+    "title": "Bug"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 3,
+  "fields": {
+    "created_at": "2025-07-11T09:34:03.276Z",
+    "updated_at": "2025-07-11T09:34:10.318Z",
+    "title": "Enhancement"
   }
 }
 ]

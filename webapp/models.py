@@ -14,8 +14,8 @@ class Task(BaseCreateUpdateModel):
     title = models.CharField(max_length=75, verbose_name='Описание')
     content = models.TextField(verbose_name='Контент', null=True, blank=True)
     deadline = models.DateField(verbose_name='Дата выполнения', null=True, blank=True)
-    status = models.ForeignKey("webapp.Statuses", related_name='task_status', on_delete=models.CASCADE, verbose_name='Задача', null=True, blank=True)
-    type = models.ForeignKey("webapp.Type", related_name='task_type', on_delete=models.CASCADE, verbose_name='Задача', null=True, blank=True)
+    status = models.ForeignKey("webapp.Statuses", related_name='task_status', on_delete=models.CASCADE, verbose_name='Статус', null=True, blank=True)
+    type = models.ForeignKey("webapp.Type", related_name='task_type', on_delete=models.CASCADE, verbose_name='Тип', null=True, blank=True)
 
 
     def __str__(self):
