@@ -14,8 +14,10 @@
 
     <div class="article">
         <h1>Название - {{ task.title }}</h1>
-        <p style="white-space: pre-wrap;">Описание - {{ task.content }}</p>
+        <p >Описание - {{ task.content }}</p>
         <p>Врямы выполнения - {{ task.deadline }}</p>
+        <p>Статус - {{ task.status.title }}</p>
+        <p>Тип - {{ task.type.title }}</p>
         <hr>
     </div>
 
