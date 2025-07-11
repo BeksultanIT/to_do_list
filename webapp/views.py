@@ -59,6 +59,8 @@ class UpdateView(View):
                 'title': task.title,
                 'deadline': task.deadline,
                 'content': task.content,
+                'status': task.status,
+                'type': task.type,
             })
         return render(request, 'update_task.html', {'form': form}, )
 
