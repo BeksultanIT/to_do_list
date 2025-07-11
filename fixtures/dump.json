@@ -4,12 +4,11 @@
   "pk": 1,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T09:37:08.208Z",
+    "updated_at": "2025-07-11T12:24:54.272Z",
     "title": "Пробежка",
     "content": "По полю 3 км",
     "deadline": "2025-06-28",
-    "status": 2,
-    "type": 2
+    "status": 2
   }
 },
 {
@@ -17,12 +16,11 @@
   "pk": 2,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T09:37:32.238Z",
+    "updated_at": "2025-07-11T12:25:04.743Z",
     "title": "Лексрство",
     "content": "Выпить лекарство",
     "deadline": "2025-06-27",
-    "status": 2,
-    "type": 2
+    "status": 2
   }
 },
 {
@@ -30,12 +28,11 @@
   "pk": 3,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T09:37:21.686Z",
+    "updated_at": "2025-07-11T12:25:14.192Z",
     "title": "Домашка",
     "content": "Сделать домашку на отлично",
     "deadline": "2025-06-27",
-    "status": 3,
-    "type": 3
+    "status": 3
   }
 },
 {
@@ -43,12 +40,11 @@
   "pk": 20,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T09:37:43.837Z",
+    "updated_at": "2025-07-11T12:25:21.220Z",
     "title": "Встреча",
     "content": "сходить на встречу с друзьями",
     "deadline": "2025-07-06",
-    "status": 1,
-    "type": 1
+    "status": 1
   }
 },
 {
@@ -56,12 +52,11 @@
   "pk": 21,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T09:38:07.220Z",
+    "updated_at": "2025-07-11T12:24:47.257Z",
     "title": "Встретить друга",
     "content": "Поехать в Аэропорт и встретить друга",
     "deadline": "2025-07-10",
-    "status": 1,
-    "type": 2
+    "status": 1
   }
 },
 {
@@ -69,12 +64,11 @@
   "pk": 22,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T09:38:50.724Z",
+    "updated_at": "2025-07-11T12:24:40.323Z",
     "title": "Контрольная работа",
     "content": "Django",
     "deadline": "2025-07-05",
-    "status": 1,
-    "type": 3
+    "status": 1
   }
 },
 {
@@ -82,12 +76,11 @@
   "pk": 23,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T09:39:12.415Z",
+    "updated_at": "2025-07-11T12:24:32.656Z",
     "title": "Купить телефон",
     "content": "Iphone 16 pro max",
     "deadline": "2025-07-01",
-    "status": 3,
-    "type": 3
+    "status": 3
   }
 },
 {
@@ -95,12 +88,11 @@
   "pk": 24,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T09:39:21.777Z",
+    "updated_at": "2025-07-11T12:24:23.621Z",
     "title": "Уборка",
     "content": "Сделать уборку в комнате",
     "deadline": "2025-07-04",
-    "status": 2,
-    "type": 2
+    "status": 2
   }
 },
 {
@@ -108,12 +100,11 @@
   "pk": 25,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T09:39:33.836Z",
+    "updated_at": "2025-07-11T12:24:17.139Z",
     "title": "помыть Машину",
     "content": "Очистить ее снаружи и изнутри",
     "deadline": "2025-07-06",
-    "status": 3,
-    "type": 1
+    "status": 3
   }
 },
 {
@@ -121,25 +112,11 @@
   "pk": 26,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T09:40:02.506Z",
+    "updated_at": "2025-07-11T12:24:07.431Z",
     "title": "Иссык-Куль",
     "content": "Сьездить на отдых",
     "deadline": "2025-07-07",
-    "status": 3,
-    "type": 1
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 27,
-  "fields": {
-    "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T09:40:54.857Z",
-    "title": "Написать контрольную",
-    "content": "На хороший балл",
-    "deadline": "2025-07-04",
-    "status": 3,
-    "type": 1
+    "status": 3
   }
 },
 {
@@ -194,6 +171,196 @@
     "created_at": "2025-07-11T09:34:03.276Z",
     "updated_at": "2025-07-11T09:34:10.318Z",
     "title": "Enhancement"
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 1,
+  "fields": {
+    "created_at": "2025-07-11T09:40:54.857Z",
+    "updated_at": "2025-07-11T09:40:54.857Z",
+    "task": 1,
+    "type": 1
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 4,
+  "fields": {
+    "created_at": "2025-07-11T12:24:07.437Z",
+    "updated_at": "2025-07-11T12:24:07.437Z",
+    "task": 26,
+    "type": 1
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 5,
+  "fields": {
+    "created_at": "2025-07-11T12:24:07.437Z",
+    "updated_at": "2025-07-11T12:24:07.437Z",
+    "task": 26,
+    "type": 3
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 6,
+  "fields": {
+    "created_at": "2025-07-11T12:24:17.144Z",
+    "updated_at": "2025-07-11T12:24:17.144Z",
+    "task": 25,
+    "type": 1
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 7,
+  "fields": {
+    "created_at": "2025-07-11T12:24:17.144Z",
+    "updated_at": "2025-07-11T12:24:17.144Z",
+    "task": 25,
+    "type": 2
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 8,
+  "fields": {
+    "created_at": "2025-07-11T12:24:23.625Z",
+    "updated_at": "2025-07-11T12:24:23.626Z",
+    "task": 24,
+    "type": 2
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 9,
+  "fields": {
+    "created_at": "2025-07-11T12:24:32.662Z",
+    "updated_at": "2025-07-11T12:24:32.662Z",
+    "task": 23,
+    "type": 2
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 10,
+  "fields": {
+    "created_at": "2025-07-11T12:24:32.662Z",
+    "updated_at": "2025-07-11T12:24:32.662Z",
+    "task": 23,
+    "type": 3
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 11,
+  "fields": {
+    "created_at": "2025-07-11T12:24:40.328Z",
+    "updated_at": "2025-07-11T12:24:40.328Z",
+    "task": 22,
+    "type": 1
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 12,
+  "fields": {
+    "created_at": "2025-07-11T12:24:40.328Z",
+    "updated_at": "2025-07-11T12:24:40.328Z",
+    "task": 22,
+    "type": 2
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 13,
+  "fields": {
+    "created_at": "2025-07-11T12:24:47.261Z",
+    "updated_at": "2025-07-11T12:24:47.261Z",
+    "task": 21,
+    "type": 2
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 14,
+  "fields": {
+    "created_at": "2025-07-11T12:24:47.261Z",
+    "updated_at": "2025-07-11T12:24:47.261Z",
+    "task": 21,
+    "type": 3
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 15,
+  "fields": {
+    "created_at": "2025-07-11T12:24:54.278Z",
+    "updated_at": "2025-07-11T12:24:54.278Z",
+    "task": 1,
+    "type": 2
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 16,
+  "fields": {
+    "created_at": "2025-07-11T12:24:54.278Z",
+    "updated_at": "2025-07-11T12:24:54.278Z",
+    "task": 1,
+    "type": 3
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 17,
+  "fields": {
+    "created_at": "2025-07-11T12:25:04.749Z",
+    "updated_at": "2025-07-11T12:25:04.749Z",
+    "task": 2,
+    "type": 1
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 18,
+  "fields": {
+    "created_at": "2025-07-11T12:25:14.197Z",
+    "updated_at": "2025-07-11T12:25:14.197Z",
+    "task": 3,
+    "type": 1
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 19,
+  "fields": {
+    "created_at": "2025-07-11T12:25:14.197Z",
+    "updated_at": "2025-07-11T12:25:14.197Z",
+    "task": 3,
+    "type": 3
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 20,
+  "fields": {
+    "created_at": "2025-07-11T12:25:21.223Z",
+    "updated_at": "2025-07-11T12:25:21.223Z",
+    "task": 20,
+    "type": 1
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 21,
+  "fields": {
+    "created_at": "2025-07-11T12:25:21.223Z",
+    "updated_at": "2025-07-11T12:25:21.223Z",
+    "task": 20,
+    "type": 2
   }
 }
 ]
