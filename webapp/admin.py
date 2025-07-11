@@ -3,7 +3,7 @@ from webapp.models import Task, Type, Statuses
 
 
 class TaskAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'deadline','created_at','updated_at','status', 'type')
+    list_display = ('id', 'title', 'deadline','created_at','updated_at','status',)
     search_fields = ('title',)
 
 class TypeAdmin(admin.ModelAdmin):
