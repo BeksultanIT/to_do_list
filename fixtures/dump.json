@@ -5,7 +5,6 @@
   "fields": {
     "title": "Пробежка",
     "content": "По полю 3 км",
-    "status": "new",
     "deadline": "2025-06-28"
   }
 },
@@ -15,7 +14,6 @@
   "fields": {
     "title": "Лексрство",
     "content": "Выпить лекарство ",
-    "status": "new",
     "deadline": "2025-06-27"
   }
 },
@@ -25,7 +23,6 @@
   "fields": {
     "title": "Домашка",
     "content": "Сделать домашку на отлично",
-    "status": "in_progress",
     "deadline": "2025-06-27"
   }
 },
@@ -35,7 +32,6 @@
   "fields": {
     "title": "Встреча",
     "content": "сходить на встречу с друзьями",
-    "status": "in_progress",
     "deadline": "2025-07-06"
   }
 },
@@ -45,7 +41,6 @@
   "fields": {
     "title": "Встретить друга",
     "content": "Поехать в Аэропорт и встретить друга",
-    "status": "new",
     "deadline": "2025-07-10"
   }
 },
@@ -55,7 +50,6 @@
   "fields": {
     "title": "Контрольная работа",
     "content": "Django",
-    "status": "in_progress",
     "deadline": "2025-07-05"
   }
 },
@@ -65,7 +59,6 @@
   "fields": {
     "title": "Купить телефон",
     "content": "Iphone 16 pro max",
-    "status": "done",
     "deadline": "2025-07-01"
   }
 },
@@ -75,7 +68,6 @@
   "fields": {
     "title": "Уборка",
     "content": "Сделать уборку в комнате",
-    "status": "in_progress",
     "deadline": "2025-07-04"
   }
 },
@@ -85,7 +77,6 @@
   "fields": {
     "title": "помыть Машину",
     "content": "Очистить ее снаружи и изнутри",
-    "status": "new",
     "deadline": "2025-07-06"
   }
 },
@@ -95,7 +86,6 @@
   "fields": {
     "title": "Иссык-Куль",
     "content": "Сьездить на отдых",
-    "status": "new",
     "deadline": "2025-07-07"
   }
 }

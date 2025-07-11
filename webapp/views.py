@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
 from webapp.forms import TaskForm, BulkDeleteForm
-from webapp.models import Task, status_choices
+from webapp.models import Task
 
 
 
@@ -22,16 +22,15 @@ def new(request):
         form = TaskForm(request.POST)
         if form.is_valid():
             title = form.cleaned_data.get('title')
-            status = form.cleaned_data.get('status')
             deadline = form.cleaned_data.get('deadline')
             content = form.cleaned_data.get('content')
-            task = Task.objects.create(title=title, status=status, deadline=deadline, content=content)
+            task = Task.objects.create(title=title, deadline=deadline, content=content)
             return redirect('detail_task', pk=task.pk)
         else:
             return redirect(request,'add_task', {"form":form} )
     else:
         form = TaskForm()
-        return render(request, 'new.html', {'status_choices': status_choices, 'form': form})
+        return render(request, 'new.html', { 'form': form})
 
 def update_task(request, *args,pk, **kwargs ):
     task = get_object_or_404(Task, pk=pk)
@@ -39,7 +38,6 @@ def update_task(request, *args,pk, **kwargs ):
         form = TaskForm(request.POST)
         if form.is_valid():
             task.title = form.cleaned_data.get('title')
-            task.status = form.cleaned_data.get('status')
             task.deadline = form.cleaned_data.get('deadline')
             task.content = form.cleaned_data.get('content')
             task.save()
@@ -49,11 +47,10 @@ def update_task(request, *args,pk, **kwargs ):
     else:
         form = TaskForm(initial={
             'title': task.title,
-            'status': task.status,
             'deadline': task.deadline,
             'content': task.content,
         })
-        return render(request, 'update_task.html', {'form': form,  'status_choices':status_choices}, )
+        return render(request, 'update_task.html', {'form': form}, )
 
 def delete_task(request, *args,pk, **kwargs ):
     task = get_object_or_404(Task, pk=pk)
@@ -61,7 +58,7 @@ def delete_task(request, *args,pk, **kwargs ):
         task.delete()
         return redirect('index')
     else:
-        return render(request, 'delete_task.html', {'task': task,  'status_choices':status_choices}, )
+        return render(request, 'delete_task.html', {'task': task}, )
 
 def detail_article(request,*args,pk, **kwargs):
     task = get_object_or_404(Task, pk=pk)
