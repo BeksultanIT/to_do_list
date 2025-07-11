@@ -17,7 +17,10 @@
         <p >Описание - {{ task.content }}</p>
         <p>Врямы выполнения - {{ task.deadline }}</p>
         <p>Статус - {{ task.status.title }}</p>
-        <p>Тип - {{ task.type.title }}</p>
+        <p>Types:</p>
+        {% for type in task.types.all %}
+            {% if forloop.last %} {{ type.title }}. {% else %} {{ type.title }}, {% endif %}
+        {% endfor %}
         <hr>
     </div>
 

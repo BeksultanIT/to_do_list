@@ -30,8 +30,9 @@ class CreateTaskView(TemplateView):
             deadline = form.cleaned_data.get('deadline')
             content = form.cleaned_data.get('content')
             status = form.cleaned_data.get('status')
-            type = form.cleaned_data.get('type')
-            task = Task.objects.create(title=title, deadline=deadline, content=content, status=status, type=type)
+            types = form.cleaned_data.get('types')
+            task = Task.objects.create(title=title, deadline=deadline, content=content, status=status)
+            task.types.set(types)
             return redirect('detail_task', pk=task.pk)
         else:
             return render(request,'new.html', {"form":form} )
@@ -48,8 +49,8 @@ class UpdateView(View):
             task.deadline = form.cleaned_data.get('deadline')
             task.content = form.cleaned_data.get('content')
             task.status = form.cleaned_data.get('status')
-            task.type = form.cleaned_data.get('type')
             task.save()
+            task.types.set(form.cleaned_data.get('types'))
             return redirect('detail_task', pk=task.pk)
         else:
             return render(request,'update_task.html', {"form":form} )
@@ -60,7 +61,7 @@ class UpdateView(View):
                 'deadline': task.deadline,
                 'content': task.content,
                 'status': task.status,
-                'type': task.type,
+                'types': task.types.all(),
             })
         return render(request, 'update_task.html', {'form': form}, )
 
