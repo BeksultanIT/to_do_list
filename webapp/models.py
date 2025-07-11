@@ -1,8 +1,7 @@
-from datetime import timezone
 
 from django.db import models
 
-# Create your models here.
+
 class BaseCreateUpdateModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания', null=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, verbose_name='дата обновления', null=True, blank=True)

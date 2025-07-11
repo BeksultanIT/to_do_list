@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView
 
 from webapp.forms import TaskForm, BulkDeleteForm
 from webapp.models import Task
