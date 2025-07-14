@@ -1,0 +1,36 @@
+from webapp.models import Task, Statuses, Type
+from django.utils import timezone
+from datetime import timedelta
+from django.db.models import Q, Count, F
+
+# 1task
+one_month_ago = timezone.now() - timedelta(days=30)
+closed_tasks_last_month = Task.objects.filter(status__title__iexact='Done', updated_at__gte=one_month_ago).values('id', 'title', 'status__title', 'types__title')
+closed_tasks_last_month
+
+# 2task
+status_list = ['New', 'In Progress']
+type_list = ['Bug', 'Enhancement']
+tasks_by_status_and_type = Task.objects.filter(status__title__in=status_list, types__title__in=type_list).values('id', 'title', 'status__title', 'types__title')
+tasks_by_status_and_type
+
+# 3 task
+tasks_bug = Task.objects.filter(~Q(status__title__iexact='Done'), Q(title__icontains='bug') | Q(types__title__iexact='Bug')).values('id', 'title', 'status__title', 'types__title')
+tasks_bug
+
+#4task
+all_tasks_limited_fields = Task.objects.select_related('status').prefetch_related('types').all()
+for task in all_tasks_limited_fields:
+    types_names = ', '.join([t.title for t in task.types.all()])
+    print(f"   ID: {task.id}, Название: {task.title}, Тип: {types_names}, Статус: {task.status.title if task.status else 'Нет статуса'}")
+
+
+#5 task
+tasks_same_description = Task.objects.filter(title=F('content'))
+for task in tasks_same_description:
+    task.title
+
+
+# 6task
+tasks_by_type_count = Type.objects.annotate(task_count=Count('tasks')).values('title', 'task_count')
+tasks_by_type_count
