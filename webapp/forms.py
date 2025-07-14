@@ -1,8 +1,10 @@
+from datetime import date
+
 from django import forms
 from django.core.exceptions import ValidationError
 from django.forms import widgets
 
-from webapp.models import Task, Type, Statuses
+from webapp.models import Task
 
 
 
@@ -38,12 +40,11 @@ class TaskForm(forms.ModelForm):
         return title
 
     def clean(self):
-        title = self.cleaned_data.get('title')
-        content = self.cleaned_data.get('content')
-        if title and content and title == content:
-            raise ValidationError("Название и контент не могут быть одинаковыми")
-        return self.cleaned_data
-
+        cleaned_data = super().clean()
+        deadline = cleaned_data.get('deadline')
+        if deadline and deadline < date.today():
+            raise ValidationError("Deadline не может быть в прошлом")
+        return cleaned_data
 
 class BulkDeleteForm(forms.Form):
     selected_tasks = forms.ModelMultipleChoiceField(
