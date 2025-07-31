@@ -1,25 +1,15 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 
 from webapp.forms import TaskForm, BulkDeleteForm
 from webapp.models import Task
 
 
-class TaskListView(TemplateView):
+class TaskListView(ListView):
     template_name = 'tasks/index.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['tasks'] = Task.objects.order_by('-id')
-        context['bulk_form'] = BulkDeleteForm()
-        return context
-
-    def post(self, request, *args, **kwargs):
-        task_ids = request.POST.getlist('selected_tasks')
-        if task_ids:
-            Task.objects.filter(id__in=task_ids).delete()
-        return redirect('index')
+    model = Task 
+    context_object_name = 'tasks'
 
 
 class CreateTaskView(TemplateView):

@@ -9,7 +9,7 @@ class Task(BaseCreateUpdateModel):
     deadline = models.DateField(verbose_name='Дата выполнения', null=True, blank=True)
     status = models.ForeignKey("webapp.Statuses", related_name='task_status', on_delete=models.CASCADE, verbose_name='Статус', null=True, blank=True)
     types = models.ManyToManyField("webapp.Type", related_name='tasks', verbose_name='Тип', blank=True, through='webapp.TaskTypes', through_fields=('task', 'type'))
-
+    project = models.ForeignKey("webapp.Project", related_name='tasks', on_delete=models.CASCADE, verbose_name='Проект')
 
     def __str__(self):
         return f"{self.id} - {self.title}"
