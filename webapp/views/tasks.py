@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from django.views.generic import TemplateView, ListView
 
-from webapp.forms import TaskForm, BulkDeleteForm
+from webapp.forms import TaskForm, BulkDeleteForm, SearchForm
 from webapp.models import Task, Project
 
 
@@ -10,6 +10,15 @@ class TaskListView(ListView):
     template_name = 'projects/index.html'
     model = Project
     context_object_name = 'projects'
+    paginate_by = 5
+
+    def get_queryset(self):
+        return super().get_queryset()
+
+    def get_context_data(self, * ,object_list = None, **kwargs):
+        result = super().get_context_data(**kwargs)
+        result['search_form'] = SearchForm()
+        return result
 
 
 class CreateTaskView(TemplateView):
