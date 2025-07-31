@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-
+{% include "partial/simple_search.html" with form=search_form %}
     <div class="row mt-5">
         <div class="col-12">
             <form method="post">
