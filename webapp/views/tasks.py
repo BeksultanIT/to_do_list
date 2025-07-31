@@ -3,13 +3,13 @@ from django.views import View
 from django.views.generic import TemplateView, ListView
 
 from webapp.forms import TaskForm, BulkDeleteForm
-from webapp.models import Task
+from webapp.models import Task, Project
 
 
 class TaskListView(ListView):
-    template_name = 'tasks/index.html'
-    model = Task 
-    context_object_name = 'tasks'
+    template_name = 'projects/index.html'
+    model = Project
+    context_object_name = 'projects'
 
 
 class CreateTaskView(TemplateView):

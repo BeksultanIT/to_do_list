@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-danger btn-sm">Удалить выбранные</button>
+                </div>
+
+                <div class="row mt-5">
+                    {% for project in projects %}
+                        <div class="col-12 col-md-4 col-lg-3 mb-3">
+                            <div class="card " style="width: 18rem;">
+                                <div class="card-body">
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" name="selected_tasks"
+                                               value="{{ project.id }}" id="task_{{ project.id }}">
+                                        <label class="form-check-label" for="task_{{ project.id }}">
+                                            Выбрать
+                                        </label>
+                                    </div>
+
+                                    <h5 class="card-title">{{ project.name }}</h5>
+                                    <p class="card-text">{{ project.description }}</p>
+{#                                    <a href="{% url 'detail_task' task.id %}" class="btn btn-outline-primary btn-sm">More</a>#}
+{#                                    <a href="{% url 'update_task' task.id %}" class="btn btn-outline-success btn-sm">Update</a>#}
+{#                                    <a href="{% url 'delete_task' task.id %}" class="btn btn-outline-danger btn-sm">Delete</a>#}
+
+                                </div>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <p>No articles</p>
+                    {% endfor %}
+                </div>
+
+
+
+{% endblock %}
