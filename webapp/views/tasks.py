@@ -6,8 +6,8 @@ from webapp.forms import TaskForm, BulkDeleteForm
 from webapp.models import Task
 
 
-class IndexView(TemplateView):
-    template_name = 'index.html'
+class TaskListView(TemplateView):
+    template_name = 'tasks/index.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -35,12 +35,12 @@ class CreateTaskView(TemplateView):
             task.types.set(types)
             return redirect('detail_task', pk=task.pk)
         else:
-            return render(request,'new.html', {"form":form} )
+            return render(request, 'tasks/new.html', {"form":form})
     def get(self, request):
         form = TaskForm()
-        return render(request, 'new.html', { 'form': form})
+        return render(request, 'tasks/new.html', {'form': form})
 
-class UpdateView(View):
+class UpdateTaskView(View):
     def post(self, request, *args,pk, **kwargs ):
         task = get_object_or_404(Task, pk=pk)
         form = TaskForm(request.POST)
@@ -53,7 +53,7 @@ class UpdateView(View):
             task.types.set(form.cleaned_data.get('types'))
             return redirect('detail_task', pk=task.pk)
         else:
-            return render(request,'update_task.html', {"form":form} )
+            return render(request, 'tasks/update_task.html', {"form":form})
     def get(self, request, *args,pk, **kwargs):
         task = get_object_or_404(Task, pk=pk)
         form = TaskForm(initial={
@@ -63,12 +63,12 @@ class UpdateView(View):
                 'status': task.status,
                 'types': task.types.all(),
             })
-        return render(request, 'update_task.html', {'form': form}, )
+        return render(request, 'tasks/update_task.html', {'form': form}, )
 
-class DeleteView(View):
+class DeleteTaskView(View):
     def get(self, request, *args,pk, **kwargs ):
         task = get_object_or_404(Task, pk=pk)
-        return render(request, 'delete_task.html', {'task': task}, )
+        return render(request, 'tasks/delete_task.html', {'task': task}, )
 
     def post(self, request, *args,pk, **kwargs ):
         task = get_object_or_404(Task, pk=pk)
@@ -77,11 +77,11 @@ class DeleteView(View):
 
 
 
-class DetailView(TemplateView):
-    template_name = 'detail_article.html'
+class DetailTaskView(TemplateView):
+    template_name = 'tasks/detail_article.html'
 
     def get_context_data(self, **kwargs):
-        context = super(DetailView, self).get_context_data(**kwargs)
+        context = super(DetailTaskView, self).get_context_data(**kwargs)
         context['task'] = Task.objects.get(pk=self.kwargs['pk'])
         return context
 
