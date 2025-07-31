@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>Хотите удалить задачу {{ project.name  }}?</p>
+        <a href="{% url 'index' %}" class="card-link btn btn-primary">Cancel</a>
+        <button type="submit" class="card-link btn btn-primary"> Yes</button>
+    </form>
+{% endblock %}

@@ -2,10 +2,11 @@ from urllib.parse import urlencode
 
 from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import TemplateView, ListView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from webapp.forms import TaskForm, BulkDeleteForm, SearchForm
+from webapp.forms import TaskForm, SearchForm, ProjectForm
 from webapp.models import Task, Project
 
 
@@ -42,66 +43,25 @@ class TaskListView(ListView):
             return self.form.cleaned_data['search']
 
 
-class CreateTaskView(TemplateView):
-    def post(self, request):
-        form = TaskForm(request.POST)
-        if form.is_valid():
-            title = form.cleaned_data.get('title')
-            deadline = form.cleaned_data.get('deadline')
-            content = form.cleaned_data.get('content')
-            status = form.cleaned_data.get('status')
-            types = form.cleaned_data.get('types')
-            task = Task.objects.create(title=title, deadline=deadline, content=content, status=status)
-            task.types.set(types)
-            return redirect('detail_task', pk=task.pk)
-        else:
-            return render(request, 'tasks/new.html', {"form":form})
-    def get(self, request):
-        form = TaskForm()
-        return render(request, 'tasks/new.html', {'form': form})
+class CreateTaskView(CreateView):
+    template_name = "projects/new.html"
+    form_class = ProjectForm
 
-class UpdateTaskView(View):
-    def post(self, request, *args,pk, **kwargs ):
-        task = get_object_or_404(Task, pk=pk)
-        form = TaskForm(request.POST)
-        if form.is_valid():
-            task.title = form.cleaned_data.get('title')
-            task.deadline = form.cleaned_data.get('deadline')
-            task.content = form.cleaned_data.get('content')
-            task.status = form.cleaned_data.get('status')
-            task.save()
-            task.types.set(form.cleaned_data.get('types'))
-            return redirect('detail_task', pk=task.pk)
-        else:
-            return render(request, 'tasks/update_task.html', {"form":form})
-    def get(self, request, *args,pk, **kwargs):
-        task = get_object_or_404(Task, pk=pk)
-        form = TaskForm(initial={
-                'title': task.title,
-                'deadline': task.deadline,
-                'content': task.content,
-                'status': task.status,
-                'types': task.types.all(),
-            })
-        return render(request, 'tasks/update_task.html', {'form': form}, )
 
-class DeleteTaskView(View):
-    def get(self, request, *args,pk, **kwargs ):
-        task = get_object_or_404(Task, pk=pk)
-        return render(request, 'tasks/delete_task.html', {'task': task}, )
+class UpdateTaskView(UpdateView):
+    template_name = "projects/update_task.html"
+    form_class = ProjectForm
+    model = Project
 
-    def post(self, request, *args,pk, **kwargs ):
-        task = get_object_or_404(Task, pk=pk)
-        task.delete()
-        return redirect('index')
+
+class DeleteTaskView(DeleteView):
+    model = Project
+    template_name = "projects/delete_task.html"
+    success_url = reverse_lazy('index')
 
 
 
-class DetailTaskView(TemplateView):
-    template_name = 'tasks/detail_article.html'
 
-    def get_context_data(self, **kwargs):
-        context = super(DetailTaskView, self).get_context_data(**kwargs)
-        context['task'] = Task.objects.get(pk=self.kwargs['pk'])
-        return context
-
+class DetailTaskView(DetailView):
+    template_name = 'projects/detail_article.html'
+    model = Project

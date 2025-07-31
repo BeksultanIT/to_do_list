@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{#{% block nav %}#}
+{#    <li class="nav-item">#}
+{#        <a class="nav-link active" aria-current="page" href="{% url 'add_task' %}">Add new task</a>#}
+{#    </li>#}
+{#    <li class="nav-item">#}
+{#        <a class="nav-link active" aria-current="page" href="{% url 'update_task' task.pk %}">Update</a>#}
+{#    </li>#}
+{#    <li class="nav-item">#}
+{#        <a class="nav-link active" aria-current="page" href="{% url 'delete_task' task.pk %}">Delete</a>#}
+{#    </li>#}
+{#{% endblock %}#}
+{% block content %}
+
+    <div class="article">
+        <h1>Название - {{ project.name }}</h1>
+        <p >Описание - {{ project.description }}</p>
+        <p>Врямы выполнения - {{ project.date_start }}</p>
+{#        <p>Статус - {{ task.status.title }}</p>#}
+        <p>Types:</p>
+        {% for type in project.tasks.all %}
+            {% if forloop.last %} {{ type.title }}. {% else %} {{ type.title }}, {% endif %}
+        {% endfor %}
+        <hr>
+    </div>
+
+{% endblock %}
