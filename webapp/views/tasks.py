@@ -1,13 +1,11 @@
 from urllib.parse import urlencode
 
 from django.db.models import Q
-from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
-from django.views import View
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from webapp.forms import TaskForm, SearchForm, ProjectForm
-from webapp.models import Task, Project
+from webapp.forms import SearchForm, ProjectForm
+from webapp.models import  Project
 
 
 class TaskListView(ListView):
@@ -49,19 +47,19 @@ class CreateTaskView(CreateView):
 
 
 class UpdateTaskView(UpdateView):
-    template_name = "projects/update_task.html"
+    template_name = "projects/update_project.html"
     form_class = ProjectForm
     model = Project
 
 
 class DeleteTaskView(DeleteView):
     model = Project
-    template_name = "projects/delete_task.html"
+    template_name = "projects/delete_project.html"
     success_url = reverse_lazy('index')
 
 
 
 
 class DetailTaskView(DetailView):
-    template_name = 'projects/detail_article.html'
+    template_name = 'projects/detail_project.html'
     model = Project
