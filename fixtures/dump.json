@@ -1,14 +1,16 @@
+Tracking file by folder pattern:  migrations
 [
 {
   "model": "webapp.task",
   "pk": 1,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T12:24:54.272Z",
+    "updated_at": "2025-07-31T10:28:06.108Z",
     "title": "Пробежка",
     "content": "По полю 3 км",
     "deadline": "2025-06-28",
-    "status": 2
+    "status": 2,
+    "project": 1
   }
 },
 {
@@ -16,11 +18,12 @@
   "pk": 2,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T12:25:04.743Z",
+    "updated_at": "2025-07-31T10:28:11.614Z",
     "title": "Лексрство",
     "content": "Выпить лекарство",
     "deadline": "2025-06-27",
-    "status": 2
+    "status": 2,
+    "project": 1
   }
 },
 {
@@ -28,11 +31,12 @@
   "pk": 3,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T12:25:14.192Z",
+    "updated_at": "2025-07-31T15:22:39.670Z",
     "title": "Домашка",
     "content": "Сделать домашку на отлично",
     "deadline": "2025-06-27",
-    "status": 3
+    "status": 3,
+    "project": 4
   }
 },
 {
@@ -40,11 +44,12 @@
   "pk": 20,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T12:25:21.220Z",
+    "updated_at": "2025-07-31T10:28:24.370Z",
     "title": "Встреча",
     "content": "сходить на встречу с друзьями",
     "deadline": "2025-07-06",
-    "status": 1
+    "status": 1,
+    "project": 1
   }
 },
 {
@@ -52,11 +57,12 @@
   "pk": 21,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T12:24:47.257Z",
+    "updated_at": "2025-07-31T10:28:30.358Z",
     "title": "Встретить друга",
     "content": "Поехать в Аэропорт и встретить друга",
     "deadline": "2025-07-10",
-    "status": 1
+    "status": 1,
+    "project": 1
   }
 },
 {
@@ -64,11 +70,12 @@
   "pk": 22,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T12:24:40.323Z",
+    "updated_at": "2025-07-31T10:28:38.462Z",
     "title": "Контрольная работа",
     "content": "Django",
     "deadline": "2025-07-05",
-    "status": 1
+    "status": 1,
+    "project": 1
   }
 },
 {
@@ -76,11 +83,12 @@
   "pk": 23,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T12:24:32.656Z",
+    "updated_at": "2025-07-31T10:28:44.562Z",
     "title": "Купить телефон",
     "content": "Iphone 16 pro max",
     "deadline": "2025-07-01",
-    "status": 3
+    "status": 3,
+    "project": 1
   }
 },
 {
@@ -88,11 +96,12 @@
   "pk": 24,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T12:24:23.621Z",
+    "updated_at": "2025-07-31T10:28:49.010Z",
     "title": "Уборка",
     "content": "Сделать уборку в комнате",
     "deadline": "2025-07-04",
-    "status": 2
+    "status": 2,
+    "project": 1
   }
 },
 {
@@ -100,11 +109,12 @@
   "pk": 25,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T12:24:17.139Z",
+    "updated_at": "2025-07-31T15:22:35.465Z",
     "title": "помыть Машину",
     "content": "Очистить ее снаружи и изнутри",
     "deadline": "2025-07-06",
-    "status": 3
+    "status": 3,
+    "project": 3
   }
 },
 {
@@ -112,11 +122,168 @@
   "pk": 26,
   "fields": {
     "created_at": "2025-07-11T09:40:54.857Z",
-    "updated_at": "2025-07-11T12:24:07.431Z",
+    "updated_at": "2025-07-31T15:22:29.894Z",
     "title": "Иссык-Куль",
     "content": "Сьездить на отдых",
     "deadline": "2025-07-07",
-    "status": 3
+    "status": 3,
+    "project": 2
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 33,
+  "fields": {
+    "created_at": "2025-07-14T19:26:56.523Z",
+    "updated_at": "2025-07-31T10:27:49.459Z",
+    "title": "Оптимизация базы данных",
+    "content": "Оптимизация базы данных",
+    "deadline": "2025-07-17",
+    "status": 2,
+    "project": 1
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 34,
+  "fields": {
+    "created_at": "2025-07-14T19:35:25.760Z",
+    "updated_at": "2025-07-31T15:22:45.103Z",
+    "title": "Исправление Bug",
+    "content": "Устранение ошибки при update",
+    "deadline": "2025-07-24",
+    "status": 2,
+    "project": 5
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 35,
+  "fields": {
+    "created_at": "2025-07-14T19:37:39.163Z",
+    "updated_at": "2025-07-31T10:27:36.212Z",
+    "title": "Выгулять собачку",
+    "content": "По игровой площадке",
+    "deadline": "2025-07-17",
+    "status": 1,
+    "project": 1
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 36,
+  "fields": {
+    "created_at": "2025-07-14T19:39:12.056Z",
+    "updated_at": "2025-07-31T10:27:01.404Z",
+    "title": "Проверка КР",
+    "content": "работа над ошибками по контрольной работе прочитать фидбек",
+    "deadline": "2025-07-17",
+    "status": 3,
+    "project": 1
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 37,
+  "fields": {
+    "created_at": "2025-07-14T19:40:20.552Z",
+    "updated_at": "2025-07-31T10:25:56.748Z",
+    "title": "оплата за курсы",
+    "content": "отправить на счет",
+    "deadline": "2025-08-09",
+    "status": 1,
+    "project": 1
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 38,
+  "fields": {
+    "created_at": "2025-07-16T12:35:07.938Z",
+    "updated_at": "2025-07-31T10:25:21.704Z",
+    "title": "ужин семья",
+    "content": "пригтовить для семьи",
+    "deadline": "2025-07-17",
+    "status": 2,
+    "project": 1
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 43,
+  "fields": {
+    "created_at": "2025-07-31T20:23:26.428Z",
+    "updated_at": "2025-07-31T20:23:26.428Z",
+    "title": "test44",
+    "content": "test",
+    "deadline": "2025-08-01",
+    "status": null,
+    "project": 5
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 45,
+  "fields": {
+    "created_at": "2025-08-01T05:30:53.827Z",
+    "updated_at": "2025-08-01T05:30:53.827Z",
+    "title": "testttt",
+    "content": "testtt",
+    "deadline": "2025-08-01",
+    "status": null,
+    "project": 14
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 46,
+  "fields": {
+    "created_at": "2025-08-01T06:09:49.850Z",
+    "updated_at": "2025-08-01T06:09:49.850Z",
+    "title": "testttt",
+    "content": "testtt",
+    "deadline": "2025-08-01",
+    "status": null,
+    "project": 14
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 48,
+  "fields": {
+    "created_at": "2025-08-01T06:12:23.851Z",
+    "updated_at": "2025-08-01T06:38:04.816Z",
+    "title": "111111",
+    "content": "sadfjhdskf",
+    "deadline": "2025-08-01",
+    "status": null,
+    "project": 2
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 49,
+  "fields": {
+    "created_at": "2025-08-01T06:12:50.588Z",
+    "updated_at": "2025-08-01T06:12:50.588Z",
+    "title": "moreeee test",
+    "content": "testtt",
+    "deadline": "2025-08-01",
+    "status": null,
+    "project": 3
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 50,
+  "fields": {
+    "created_at": "2025-08-01T06:13:53.325Z",
+    "updated_at": "2025-08-01T06:13:53.325Z",
+    "title": "teatttt",
+    "content": "dsfaf",
+    "deadline": "2025-08-01",
+    "status": null,
+    "project": 4
   }
 },
 {
@@ -361,6 +528,276 @@
     "updated_at": "2025-07-11T12:25:21.223Z",
     "task": 20,
     "type": 2
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 34,
+  "fields": {
+    "created_at": "2025-07-14T19:26:56.528Z",
+    "updated_at": "2025-07-14T19:26:56.528Z",
+    "task": 33,
+    "type": 1
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 35,
+  "fields": {
+    "created_at": "2025-07-14T19:26:56.528Z",
+    "updated_at": "2025-07-14T19:26:56.528Z",
+    "task": 33,
+    "type": 2
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 36,
+  "fields": {
+    "created_at": "2025-07-14T19:35:25.764Z",
+    "updated_at": "2025-07-14T19:35:25.764Z",
+    "task": 34,
+    "type": 2
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 37,
+  "fields": {
+    "created_at": "2025-07-14T19:37:39.169Z",
+    "updated_at": "2025-07-14T19:37:39.169Z",
+    "task": 35,
+    "type": 1
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 38,
+  "fields": {
+    "created_at": "2025-07-14T19:37:39.169Z",
+    "updated_at": "2025-07-14T19:37:39.169Z",
+    "task": 35,
+    "type": 3
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 39,
+  "fields": {
+    "created_at": "2025-07-14T19:39:12.062Z",
+    "updated_at": "2025-07-14T19:39:12.062Z",
+    "task": 36,
+    "type": 1
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 40,
+  "fields": {
+    "created_at": "2025-07-14T19:39:12.062Z",
+    "updated_at": "2025-07-14T19:39:12.062Z",
+    "task": 36,
+    "type": 3
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 41,
+  "fields": {
+    "created_at": "2025-07-14T19:40:20.559Z",
+    "updated_at": "2025-07-14T19:40:20.559Z",
+    "task": 37,
+    "type": 2
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 42,
+  "fields": {
+    "created_at": "2025-07-14T19:40:20.559Z",
+    "updated_at": "2025-07-14T19:40:20.559Z",
+    "task": 37,
+    "type": 3
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 43,
+  "fields": {
+    "created_at": "2025-07-16T12:35:07.947Z",
+    "updated_at": "2025-07-16T12:35:07.947Z",
+    "task": 38,
+    "type": 1
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 44,
+  "fields": {
+    "created_at": "2025-07-16T12:35:07.947Z",
+    "updated_at": "2025-07-16T12:35:07.947Z",
+    "task": 38,
+    "type": 2
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 49,
+  "fields": {
+    "created_at": "2025-07-31T20:23:26.434Z",
+    "updated_at": "2025-07-31T20:23:26.434Z",
+    "task": 43,
+    "type": 1
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 51,
+  "fields": {
+    "created_at": "2025-08-01T05:30:53.832Z",
+    "updated_at": "2025-08-01T05:30:53.832Z",
+    "task": 45,
+    "type": 2
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 52,
+  "fields": {
+    "created_at": "2025-08-01T06:09:49.855Z",
+    "updated_at": "2025-08-01T06:09:49.855Z",
+    "task": 46,
+    "type": 2
+  }
+},
+{
+  "model": "webapp.tasktypes",
+  "pk": 54,
+  "fields": {
+    "created_at": "2025-08-01T06:13:53.331Z",
+    "updated_at": "2025-08-01T06:13:53.331Z",
+    "task": 50,
+    "type": 1
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 1,
+  "fields": {
+    "date_start": "2025-07-31",
+    "date_end": "2025-08-01",
+    "name": "Контрольная работа",
+    "description": "проверка знаний к конецу месяца"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 2,
+  "fields": {
+    "date_start": "2025-07-31",
+    "date_end": null,
+    "name": "home work",
+    "description": "домашнее задание"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 3,
+  "fields": {
+    "date_start": "2025-07-31",
+    "date_end": null,
+    "name": "Test1",
+    "description": "test1"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 4,
+  "fields": {
+    "date_start": "2025-07-31",
+    "date_end": null,
+    "name": "Test2",
+    "description": "test2"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 5,
+  "fields": {
+    "date_start": "2025-07-31",
+    "date_end": null,
+    "name": "Test3",
+    "description": "test3"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 7,
+  "fields": {
+    "date_start": "2025-08-01",
+    "date_end": "2025-08-01",
+    "name": "Test4",
+    "description": "test4"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 8,
+  "fields": {
+    "date_start": "2025-08-01",
+    "date_end": null,
+    "name": "test5",
+    "description": "test5"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 9,
+  "fields": {
+    "date_start": "2025-08-01",
+    "date_end": null,
+    "name": "test6",
+    "description": "test6"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 10,
+  "fields": {
+    "date_start": "2025-08-01",
+    "date_end": null,
+    "name": "Test7",
+    "description": "Test7"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 12,
+  "fields": {
+    "date_start": "2025-08-01",
+    "date_end": null,
+    "name": "Task8",
+    "description": "Task8"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 13,
+  "fields": {
+    "date_start": "2025-08-01",
+    "date_end": null,
+    "name": "Test9",
+    "description": "test9"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 14,
+  "fields": {
+    "date_start": "2025-08-01",
+    "date_end": null,
+    "name": "test10",
+    "description": "test10"
   }
 }
 ]
