@@ -1,6 +1,8 @@
 from urllib.parse import urlencode
 
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
@@ -41,9 +43,10 @@ class ProjectListView(ListView):
             return self.form.cleaned_data['search']
 
 
-class CreateProjectView(CreateView):
+class CreateProjectView(LoginRequiredMixin ,CreateView):
     template_name = "projects/new.html"
     form_class = ProjectForm
+
 
 
 class UpdateProjectView(UpdateView):

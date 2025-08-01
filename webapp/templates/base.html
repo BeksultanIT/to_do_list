@@ -22,11 +22,21 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 {% block nav %}
+                    {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'webapp:add_project' %}">Add new
                             Project</a>
                     </li>
-
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'accounts:logout' %}">Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'accounts:login' %}">Logint</a>
+                        </li>
+                    {% endif %}
                 {% endblock %}
             </ul>
         </div>
