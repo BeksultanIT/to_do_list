@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404
 from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 
@@ -5,7 +6,7 @@ from webapp.forms import TaskForm
 from webapp.models import Project, Task
 
 
-class CreateTaskView(CreateView):
+class CreateTaskView(LoginRequiredMixin, CreateView):
     template_name = "tasks/new_task.html"
     form_class = TaskForm
 
@@ -16,14 +17,14 @@ class CreateTaskView(CreateView):
         return super().form_valid(form)
 
 
-class UpdateTaskView(UpdateView):
+class UpdateTaskView(LoginRequiredMixin, UpdateView):
      model = Task
      form_class = TaskForm
      template_name = "tasks/update_task.html"
 
 
 
-class DeleteTaskView(DeleteView):
+class DeleteTaskView( LoginRequiredMixin, DeleteView):
     model = Task
 
 

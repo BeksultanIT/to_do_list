@@ -49,13 +49,13 @@ class CreateProjectView(LoginRequiredMixin ,CreateView):
 
 
 
-class UpdateProjectView(UpdateView):
+class UpdateProjectView(LoginRequiredMixin,UpdateView):
     template_name = "projects/update_project.html"
     form_class = ProjectForm
     model = Project
 
 
-class DeleteProjectView(DeleteView):
+class DeleteProjectView(LoginRequiredMixin, DeleteView):
     model = Project
     template_name = "projects/delete_project.html"
     success_url = reverse_lazy('webapp:index')
