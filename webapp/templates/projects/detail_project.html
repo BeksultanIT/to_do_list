@@ -1,15 +1,18 @@
 {% extends "base.html" %}
-{#{% block nav %}#}
-{#    <li class="nav-item">#}
-{#        <a class="nav-link active" aria-current="page" href="{% url 'add_task' %}">Add new task</a>#}
-{#    </li>#}
-{#    <li class="nav-item">#}
-{#        <a class="nav-link active" aria-current="page" href="{% url 'update_task' task.pk %}">Update</a>#}
-{#    </li>#}
-{#    <li class="nav-item">#}
-{#        <a class="nav-link active" aria-current="page" href="{% url 'delete_task' task.pk %}">Delete</a>#}
-{#    </li>#}
-{#{% endblock %}#}
+{% block nav %}
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{% url 'add_project' %}">Add new Project</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{% url 'update_project' project.pk %}">Update</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{% url 'delete_project' project.pk %}">Delete</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{% url 'add_task' project.pk %}">Add new Task</a>
+    </li>
+{% endblock %}
 {% block content %}
 
     <div class="article">
@@ -21,6 +24,11 @@
         {% for type in project.tasks.all %}
             {% if forloop.last %} {{ type.title }}. {% else %} {{ type.title }}, {% endif %}
         {% endfor %}
+
+{#        <a href="{% url 'detail_task' project.id %}" class="btn btn-outline-primary btn-sm">More</a>#}
+{#        <a href="{% url 'update_task' project.id %}" class="btn btn-outline-success btn-sm">Update</a>#}
+{#        <a href="{% url 'delete_task' project.id %}" class="btn btn-outline-danger btn-sm">Delete</a>#}
+
         <hr>
     </div>
 

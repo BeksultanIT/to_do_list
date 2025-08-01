@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 from webapp.models.base_create_update import BaseCreateUpdateModel
 
@@ -18,3 +19,7 @@ class Task(BaseCreateUpdateModel):
         db_table = 'tasks'
         verbose_name = 'Задача'
         verbose_name_plural = 'Задачи'
+
+
+    def get_absolute_url(self):
+        return reverse('detail_project', kwargs={'pk': self.project_id})

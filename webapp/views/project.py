@@ -8,7 +8,7 @@ from webapp.forms import SearchForm, ProjectForm
 from webapp.models import  Project
 
 
-class TaskListView(ListView):
+class ProjectListView(ListView):
     template_name = 'projects/index.html'
     model = Project
     context_object_name = 'projects'
@@ -41,18 +41,18 @@ class TaskListView(ListView):
             return self.form.cleaned_data['search']
 
 
-class CreateTaskView(CreateView):
+class CreateProjectView(CreateView):
     template_name = "projects/new.html"
     form_class = ProjectForm
 
 
-class UpdateTaskView(UpdateView):
+class UpdateProjectView(UpdateView):
     template_name = "projects/update_project.html"
     form_class = ProjectForm
     model = Project
 
 
-class DeleteTaskView(DeleteView):
+class DeleteProjectView(DeleteView):
     model = Project
     template_name = "projects/delete_project.html"
     success_url = reverse_lazy('index')
@@ -60,6 +60,6 @@ class DeleteTaskView(DeleteView):
 
 
 
-class DetailTaskView(DetailView):
+class DetailProjectView(DetailView):
     template_name = 'projects/detail_project.html'
     model = Project
