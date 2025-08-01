@@ -55,7 +55,7 @@ class UpdateProjectView(UpdateView):
 class DeleteProjectView(DeleteView):
     model = Project
     template_name = "projects/delete_project.html"
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('webapp:index')
 
 
 

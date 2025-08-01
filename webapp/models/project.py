@@ -18,6 +18,6 @@ class Project(models.Model):
         verbose_name_plural = 'Проекты'
 
     def get_absolute_url(self):
-        return reverse('detail_project', kwargs={'pk': self.id})
+        return reverse('webapp:detail_project', kwargs={'pk': self.id})
 
 

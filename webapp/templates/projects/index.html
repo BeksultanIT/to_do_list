@@ -25,9 +25,9 @@
 
                                     <h5 class="card-title">{{ project.name }}</h5>
                                     <p class="card-text">{{ project.description }}</p>
-                                    <a href="{% url 'detail_project' project.id %}" class="btn btn-outline-primary btn-sm">More</a>
-                                    <a href="{% url 'update_project' project.id %}" class="btn btn-outline-success btn-sm">Update</a>
-                                    <a href="{% url 'delete_project' project.id %}" class="btn btn-outline-danger btn-sm">Delete</a>
+                                    <a href="{% url 'webapp:detail_project' project.id %}" class="btn btn-outline-primary btn-sm">More</a>
+                                    <a href="{% url 'webapp:update_project' project.id %}" class="btn btn-outline-success btn-sm">Update</a>
+                                    <a href="{% url 'webapp:delete_project' project.id %}" class="btn btn-outline-danger btn-sm">Delete</a>
 
                                 </div>
                             </div>
