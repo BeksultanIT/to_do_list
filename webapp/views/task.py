@@ -1,6 +1,5 @@
-from django.shortcuts import get_object_or_404, redirect
-from django.urls import reverse
-from django.views.generic import CreateView, UpdateView, DeleteView
+from django.shortcuts import get_object_or_404
+from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 
 from webapp.forms import TaskForm
 from webapp.models import Project, Task
@@ -16,16 +15,12 @@ class CreateTaskView(CreateView):
         form.instance.project = project
         return super().form_valid(form)
 
-    # def get_success_url(self):
-    #     return reverse('detail_project', kwargs={'pk': self.object.project_id})
 
 class UpdateTaskView(UpdateView):
      model = Task
      form_class = TaskForm
      template_name = "tasks/update_task.html"
 
-     # def success_url(self):
-     #     return reverse('detail_project', kwargs={'pk': self.object.project.pk})
 
 
 class DeleteTaskView(DeleteView):
@@ -40,3 +35,9 @@ class DeleteTaskView(DeleteView):
     def get_success_url(self):
         return self.object.get_absolute_url()
 
+
+
+
+class DetailTaskView(DetailView):
+    template_name = 'tasks/detail_task.html'
+    model = Task

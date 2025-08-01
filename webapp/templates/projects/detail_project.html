@@ -1,39 +1,55 @@
 {% extends "base.html" %}
 {% block nav %}
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="{% url 'add_project' %}">Add new Project</a>
+        <a class="nav-link" href="{% url 'add_project' %}">Добавить проект</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="{% url 'update_project' project.pk %}">Update</a>
+        <a class="nav-link" href="{% url 'update_project' project.pk %}">Редактировать проект</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="{% url 'delete_project' project.pk %}">Delete</a>
+        <a class="nav-link" href="{% url 'delete_project' project.pk %}">Удалить проект</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="{% url 'add_task' project.pk %}">Add new Task</a>
+        <a class="nav-link" href="{% url 'add_task' project.pk %}">Добавить задачу</a>
     </li>
 {% endblock %}
-{% block content %}
 
-    <div class="article">
-        <h1>Название - {{ project.name }}</h1>
-        <p >Описание - {{ project.description }}</p>
-        <p>Врямы выполнения - {{ project.date_start }}</p>
-{#        <p>Статус - {{ task.status.title }}</p>#}
-        <p>Types:</p>
+{% block content %}
+<div class="card mb-4">
+    <div class="card-body">
+        <h2 class="card-title">{{ project.name }}</h2>
+        <p class="card-text"><strong>Описание:</strong> {{ project.description }}</p>
+        <p class="card-text"><strong>Дата начала:</strong> {{ project.date_start }}</p>
+        {% if project.date_end %}
+            <p class="card-text"><strong>Дата окончания:</strong> {{ project.date_end }}</p>
+        {% endif %}
+    </div>
+</div>
+
+<h3>Задачи проекта:</h3>
+
+{% if project.tasks.exists %}
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {% for task in project.tasks.all %}
-            <div class="card">
-            {% if forloop.last %} {{ task.title }}. {% else %} {{ task.title }}, {% endif %}
-                <a href="{% url 'update_task' task.pk%}">Update</a>
-                <a href="{% url 'delete_task' task.pk %}">Delete</a>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ task.title }}</h5>
+                        <p class="card-text">
+                            <strong>Статус:</strong> {{ task.status.title }}<br>
+                            {% if task.deadline %}<strong>Дедлайн:</strong> {{ task.deadline }}<br>{% endif %}
+                        </p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a href="{% url 'detail_task' task.pk %}" class="btn btn-outline-primary btn-sm">Подробнее</a>
+                        <a href="{% url 'update_task' task.pk %}" class="btn btn-outline-success btn-sm">Изменить</a>
+                        <a href="{% url 'delete_task' task.pk %}" class="btn btn-outline-danger btn-sm">Удалить</a>
+                    </div>
+                </div>
             </div>
         {% endfor %}
-
-{#        <a href="{% url 'detail_task' project.id %}" class="btn btn-outline-primary btn-sm">More</a>#}
-{#        <a href="{% url 'update_task' project.id %}" class="btn btn-outline-success btn-sm">Update</a>#}
-{#        <a href="{% url 'delete_task' project.id %}" class="btn btn-outline-danger btn-sm">Delete</a>#}
-
-        <hr>
     </div>
-
+{% else %}
+    <p class="text-muted">В этом проекте пока нет задач.</p>
+{% endif %}
 {% endblock %}
