@@ -47,6 +47,10 @@ class CreateProjectView(LoginRequiredMixin ,CreateView):
     template_name = "projects/new.html"
     form_class = ProjectForm
 
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
 
 
 class UpdateProjectView(LoginRequiredMixin,UpdateView):
