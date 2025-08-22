@@ -1,0 +1,25 @@
+{% load static %} <!-- Django тег для статики -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+</head>
+<body>
+  <h1>Calculator</h1>
+
+  <input id="a" type="number" placeholder="A">
+  <input id="b" type="number" placeholder="B"><br><br>
+
+  <button onclick="calc('add')">Add</button>
+  <button onclick="calc('subtract')">Subtract</button>
+  <button onclick="calc('multiply')">Multiply</button>
+  <button onclick="calc('divide')">Divide</button>
+
+  <p id="res"></p>
+
+
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
