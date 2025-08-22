@@ -6,6 +6,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 
 from webapp.forms import SearchForm, ProjectForm
 from webapp.models import  Project
+from django.shortcuts import render
 
 
 class ProjectListView(ListView):
@@ -63,3 +64,9 @@ class DeleteProjectView(DeleteView):
 class DetailProjectView(DetailView):
     template_name = 'projects/detail_project.html'
     model = Project
+
+
+
+def hw69(request):
+    return render(request, "hw69.html")
+
